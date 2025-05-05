@@ -1,4 +1,6 @@
 const express = require('express');
+const serverless = require('serverless-http');
+
 const app = express();
 
 // Routes
@@ -10,5 +12,5 @@ app.get('/about', (req, res) => {
   res.send('About route 🎉');
 });
 
-// Export the app as a Vercel handler
-module.exports = app;
+// Export wrapped app
+module.exports = serverless(app);
