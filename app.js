@@ -12,5 +12,5 @@ app.get('/about', (req, res) => {
   res.send('About route 🎉');
 });
 
-// Export wrapped app
-module.exports = serverless(app);
+// Export serverless handler
+module.exports.handler = serverless(app);
