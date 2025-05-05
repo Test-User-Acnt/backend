@@ -1,14 +1,17 @@
-// server.js
-
-const express = require("express");
+const express = require('express');
+const cors = require('cors');
+const authRoutes = require('./src/routes/auth.route');
+// const swaggerUi = require('swagger-ui-express')
+// const swaggerDocument = require('./swagger/swagger-output.json')
 const app = express();
 
-// A simple get greet method
-app.get("/greet", (req, res) => {
-    // get the passed query
-    const { name } = req.query;
-    res.send({ msg: `Welcome ${name}!` });
-});
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.get('/', (req, res) => {
+    res.send("App is Working...");
+})
+app.use('/api', authRoutes);
+// app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-// export the app for vercel serverless functions
 module.exports = app;

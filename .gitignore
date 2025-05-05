@@ -69,3 +69,4 @@ cache/
 coverage/
 .nyc_output/
 lcov-report/
+.vercel
