@@ -1,4 +1,5 @@
 'use strict'
+require('pg');
 
 module.exports = (sequelize, DataTypes) => {
   const Auth = sequelize.define('Auth', {
