@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-     "postinstall": "npm install pg",
+    "postinstall": "npm install pg",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -22,5 +22,9 @@
     "sequelize": "^6.37.7",
     "serverless-http": "^3.2.0",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "swagger-autogen": "^2.23.7"
   }
 }
